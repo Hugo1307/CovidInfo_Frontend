@@ -1,5 +1,6 @@
-body {
+html, body {
   margin: 0;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +8,28 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#ts_particles {
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+}
+
+.border-left-primary {
+  border-left: .25rem solid #FD5D5D !important;
+}
+
+.stat-panel-title {
+  color: #FD5D5D;
+}
+
