@@ -13,6 +13,12 @@ const TopBar = () => (
                     <li className="nav-item">
                         <Link className="nav-link" to="/country">Country Statistics</Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/country_history">Country History</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/cache_details">Cache Details</Link>
+                    </li>
                 </ul>
             </div>
             <div className="mx-4">
