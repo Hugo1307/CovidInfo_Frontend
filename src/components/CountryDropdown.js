@@ -8,14 +8,12 @@ const CountryDropdown = (props) => {
 
     let optionsList = [];
 
-    console.log(props.onUpdate)
-
     if (!loading && !error) {
-        data.map((item) => optionsList.push(<option onClick={props.onUpdate.bind(this, item)}>{item.name}</option>));
+        data.map((item) => optionsList.push(<option value={item.name.toString() + ":" + item.code.toString()}>{item.name}</option>));
     }
 
     return (
-        <select className="form-control">
+        <select className="form-control" onChange={props.onUpdate.bind(this)}>
             {optionsList}
         </select>
     );

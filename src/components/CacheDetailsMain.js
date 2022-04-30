@@ -6,7 +6,7 @@ import {BsArrowClockwise} from "react-icons/bs";
 const CacheDetailsMain = () => {
 
     const [{data, loading, error}, re_fetch] = useAxios({
-        url: 'http://localhost:8080/api/cache/details',
+        url: 'http://localhost:8080/cache/details',
     });
 
     let convertedData = []

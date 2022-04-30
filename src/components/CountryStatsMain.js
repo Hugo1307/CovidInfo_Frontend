@@ -4,18 +4,22 @@ import {Col, Container, Row} from "react-bootstrap";
 import useAxios from "axios-hooks";
 import PanelsList from "./PanelsList";
 import ApiDropdown from "./ApiDropdown";
+import {BsArrowClockwise} from "react-icons/bs";
 
 const CountryStatsMain = () => {
 
     const [country, setCountry] = useState({name: "Afghanistan", code: "afg"});
     const [api, setApi] = useState("VAC_COVID");
 
-    const [{data, loading, error}] = useAxios({
+    const [{data, loading, error}, re_fetch] = useAxios({
         url: 'http://localhost:8080/api/country',
         params: {"countryName": country.name, "countryCode": country.code, "api": api}
     });
 
-    const onUpdate = (item) => setCountry(item);
+    const onUpdate = (item) => {
+        let itemParsed = item.target.value.split(":");
+        setCountry({name: itemParsed[0], code: itemParsed[1]});
+    }
 
     const onApiChanged = (api) => setApi(api);
 
@@ -36,7 +40,14 @@ const CountryStatsMain = () => {
             <Row>
                 <Row>
                     <Col className="col-9">
-                        <h4>Country Statistics</h4>
+                        <Row>
+                            <Col className="col-3">
+                                <h4>Country Statistics</h4>
+                            </Col>
+                            <Col>
+                                <BsArrowClockwise size={28} onClick={re_fetch} />
+                            </Col>
+                        </Row>
                     </Col>
                     <Col className="mx-4">
                         <Row>

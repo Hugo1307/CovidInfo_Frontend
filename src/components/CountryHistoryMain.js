@@ -22,8 +22,9 @@ const CountryHistoryMain = () => {
         params: requestParams
     });
 
-    const onCountryChanged = (countryObj) => {
-        setCountry(countryObj);
+    const onCountryChanged = (item) => {
+        let itemParsed = item.target.value.split(":");
+        setCountry({name: itemParsed[0], code: itemParsed[1]});
         setDate(null);
     }
 

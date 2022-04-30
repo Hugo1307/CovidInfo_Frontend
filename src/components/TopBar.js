@@ -21,11 +21,6 @@ const TopBar = () => (
                     </li>
                 </ul>
             </div>
-            <div className="mx-4">
-                <form className="form-inline">
-                    <input className="form-control" type="text" placeholder="Search" aria-label="Search"/>
-                </form>
-            </div>
         </Container>
     </Navbar>
 );
