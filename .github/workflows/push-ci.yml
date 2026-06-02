@@ -18,3 +18,6 @@ jobs:
           language: JAVASCRIPT
           username: ${{ secrets.CODESPELL_USERNAME }}
           password: ${{ secrets.CODESPELL_PASSWORD }}
+          api-url: https://api-dev.codespell.net
+          auth-url: https://auth-dev.codespell.net
+          auth-realm: codespell-dev
